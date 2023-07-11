@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import './IncomeForm.css';
+import './ExpenseForm.css';
 import { useBudgetContext } from '../../context/BudgetContext';
 
-const IncomeForm = () => {
-  const { addIncome } = useBudgetContext();
+const ExpenseForm = () => {
+  const { addExpense, error, setError } = useBudgetContext();
   const [inputState, setInputState] = useState({
     title: '',
     amount: 0,
@@ -17,14 +17,15 @@ const IncomeForm = () => {
 
   const handleChangeInput = (name) => (e) => {
     setInputState({ ...inputState, [name]: e.target.value });
+    setError('');
   };
 
   const handleIncomeSubmit = (e) => {
     e.preventDefault();
-    addIncome(inputState);
+    addExpense(inputState);
     setInputState({
       title: '',
-      amount: 0,
+      amount: '',
       date: '',
       category: '',
       description: '',
@@ -33,12 +34,13 @@ const IncomeForm = () => {
   const { title, amount, date, category, description } = inputState;
   return (
     <form className="form" onSubmit={handleIncomeSubmit}>
+      {error && <p className="error">{error}</p>}
       <div className="input-control">
         <input
           type="text"
           name="title"
           value={title}
-          placeholder="Salary"
+          placeholder="Expense"
           onChange={handleChangeInput('title')}
         />
       </div>
@@ -74,10 +76,13 @@ const IncomeForm = () => {
           <option value="" disabled>
             Select Option
           </option>
-          <option value="salary">Salary</option>
-          <option value="investment">Investment</option>
-          <option value="freelance">Freelance</option>
-          <option value="rental">Rental</option>
+          <option value="education">Education</option>
+          <option value="groceries">Groceries</option>
+          <option value="health">Health</option>
+          <option value="subscriptions">Subscriptions</option>
+          <option value="takeaways">Takeaways</option>
+          <option value="clothing">Clothing</option>
+          <option value="travel">Travel</option>
           <option value="other">Other</option>
         </select>
       </div>
@@ -95,10 +100,10 @@ const IncomeForm = () => {
       </div>
 
       <div className="btn-submit">
-        <button className="btn">Add Income</button>
+        <button className="btn">Add Expense</button>
       </div>
     </form>
   );
 };
 
-export default IncomeForm;
+export default ExpenseForm;

@@ -124,7 +124,7 @@ a {
     }
   }
 
-  /* Media Query for 800px Screens */
+  /* Media Query for 912px Screens */
 @media only screen and (max-width: 912px) {
     .sidebar {
       padding: 1rem;
