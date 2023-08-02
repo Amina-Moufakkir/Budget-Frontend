@@ -1,31 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar/Sidebar';
+import { Landing, Error, Register, Stats } from './pages';
 
-import './App.css';
-import Dashboard from './components/Dashboard/Dashboard';
-import Expenses from './components/Expenses/Expenses';
-import Income from './components/Income/Income';
-import Transactions from './components/Transactions/Transactions';
+import {
+  AllTransactions,
+  AddTransactions,
+  Profile,
+  ProtectedRoute,
+} from './pages/dashboard';
+import Dashboard from './pages/dashboard/Dashboard';
 
 const App = () => {
-  const [active, setActive] = useState(1);
-
   return (
     <Router>
-      <div className="App">
-        <main className="main">
-          <Sidebar active={active} setActive={setActive} />
-          <section className="section">
-            <Routes>
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/expenses" element={<Expenses />} />
-              <Route path="/income" element={<Income />} />
-              <Route path="/transactions" element={<Transactions />} />
-            </Routes>
-          </section>
-        </main>
-      </div>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<Stats />} />
+          <Route path="all-transactions" element={<AllTransactions />} />
+          <Route path="add-transactions" element={<AddTransactions />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
+        <Route path="/register" element={<Register />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
     </Router>
   );
 };
