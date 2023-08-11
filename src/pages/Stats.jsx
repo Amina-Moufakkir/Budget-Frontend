@@ -17,7 +17,7 @@ const Stats = () => {
   return (
     <>
       <StatsContainer />
-      {reversedMonthlyTransactions.length > 0 && <ChartContainer />}
+      {/* {reversedMonthlyTransactions.length > 0 && } */}
     </>
   );
 };
