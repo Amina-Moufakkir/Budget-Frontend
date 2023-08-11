@@ -2,9 +2,9 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-const StatsItem = ({ count, title, icon, color, bcg }) => {
+const StatsItem = ({ count, title, icon, color }) => {
   return (
-    <Wrapper color={color} bcg={bcg}>
+    <Wrapper color={color}>
       <header>
         <span className="count">{count}</span>
         <span className="icon">{icon}</span>
@@ -40,7 +40,7 @@ const Wrapper = styled.article`
   .icon {
     width: 70px;
     height: 60px;
-    background: ${(props) => props.bcg};
+    background: ${(props) => props.bg};
     border-radius: var(--borderRadius);
     display: flex;
     align-items: center;

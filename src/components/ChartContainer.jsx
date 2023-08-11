@@ -9,7 +9,6 @@ const ChartContainer = () => {
   const [barChart, setBarChart] = useState(true);
 
   const { monthlyTransactions: data } = useAppContext();
-  console.log(data);
 
   return (
     <Wrapper>

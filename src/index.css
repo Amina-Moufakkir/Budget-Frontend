@@ -404,12 +404,12 @@ html {
     overflow: hidden;
     table-layout: fixed;
     border-collapse: collapse;
-    /* box-shadow: 0px 10px 10px #ccc; */
+    box-shadow: 0px 10px 10px #ccc;
     border-radius: 10px;
     white-space: nowrap;
-    width: 100em;
+    /* width: 100em; */
     max-width: 80%;
-    margin: auto;
+    /* margin: auto; */
     /* padding: 2rem; */
     table-layout: auto;
     overflow-x: auto;

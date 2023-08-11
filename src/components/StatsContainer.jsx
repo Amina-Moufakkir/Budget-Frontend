@@ -15,21 +15,21 @@ const StatsContainer = () => {
       count: stats.income || 0,
       icon: <GiReceiveMoney />,
       color: '#e9b949',
-      bcg: '#fcefc7',
+      // background: '#fcefc7',
     },
     {
       title: 'Expenses',
       count: stats.expenses || 0,
       icon: <GiPayMoney />,
       color: '#d66a6a',
-      bcg: '#ffeeee',
+      // background: '#ffeeee',
     },
     {
       title: 'Balance',
       count: stats.balance || 0,
       icon: <FaPiggyBank />,
       color: '#647acb',
-      bcg: '#e0e8f9',
+      // background: '#e0e8f9',
     },
   ];
   return (

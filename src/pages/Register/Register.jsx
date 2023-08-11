@@ -95,6 +95,7 @@ const Register = () => {
           name="email"
           value={email}
           handleChange={handleChange}
+          labelText="Email"
         />
 
         <FormRow

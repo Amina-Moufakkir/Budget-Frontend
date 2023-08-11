@@ -125,17 +125,17 @@ const Wrapper = styled.section`
   & > h5 {
     font-weight: 700;
   }
-  .transaction {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 2rem;
+  .transaction table {
+    margin: 0 auto;
   }
-  @media (min-width: 992px) {
+  ${
+    '' /* @media (min-width: 992px) {
     .transaction {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
+  } */
   }
   .main-icon {
     width: 40px;

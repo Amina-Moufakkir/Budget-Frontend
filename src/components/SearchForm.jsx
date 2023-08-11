@@ -39,7 +39,7 @@ const SearchForm = () => {
     };
   };
   const optimizedDebounce = useMemo(() => {
-    debounce();
+    return debounce();
     // eslint-disable-next-line
   }, []);
 
@@ -53,6 +53,7 @@ const SearchForm = () => {
             name="search"
             value={delaySearch}
             handleChange={optimizedDebounce}
+            labelText="Search"
           />
           <FormSelect
             labelText="Transaction name"
