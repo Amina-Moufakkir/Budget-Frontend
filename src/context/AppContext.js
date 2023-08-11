@@ -79,7 +79,7 @@ const INITIAL_STATE = {
   numOfPages: 1,
   stats: {},
   balance: '',
-  monthlyTransactions: [],
+  reversedMonthlyTransactions: [],
   search: '',
   searchTransaction: 'all',
   searchCategory: 'all',
@@ -327,7 +327,7 @@ const AppProvider = ({ children }) => {
         type: SHOW_STATS_SUCCESS,
         payload: {
           stats: data.defaultStats,
-          monthlyTransactions: data.monthlyTransactions,
+          reversedMonthlyTransactions: data.reversedMonthlyTransactions,
         },
       });
     } catch (error) {

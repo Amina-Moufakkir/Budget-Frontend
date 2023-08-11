@@ -5,7 +5,7 @@ import { Loading } from '../components';
 import ChartContainer from '../components/ChartContainer';
 
 const Stats = () => {
-  const { showStats, isLoading, monthlyTransactions } = useAppContext();
+  const { showStats, isLoading, reversedMonthlyTransactions } = useAppContext();
 
   useEffect(() => {
     showStats();
@@ -17,7 +17,7 @@ const Stats = () => {
   return (
     <>
       <StatsContainer />
-      {monthlyTransactions.length > 0 && <ChartContainer />}
+      {reversedMonthlyTransactions.length > 0 && <ChartContainer />}
     </>
   );
 };
